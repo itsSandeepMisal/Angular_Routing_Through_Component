@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="jumbotron">
+    <p class="display-4 text-center">
+      Login Form
+    </p>
+  </div>
+
+  <input type="text" class="form-control mt-5" id="uname" placeholder="User Name" [(ngModel)]="userid" required #unameValue="ngModel"
+    name="uname">
+  <!-- <div [hidden]="unameValue.pristine || unameValue.valid" class="alert alert-danger">
+    must enter user name
+  </div> -->
+  <input type="text" class="form-control mt-4" placeholder="Password" name="password" [(ngModel)]="password" required #passValue="ngModel">
+  <!-- <div [hidden]="passValue.pristine || passValue.valid" class="alert alert-danger">
+    must enter password
+  </div> -->
+  <!-- <input type="text" class="form-control mt-4" placeholder="Re-enter Password" name="repassword" [(ngModel)]="repass" required #repassValue="ngModel"> -->
+  <!-- <div [hidden]="repassValue.pristine || repassValue.valid " class="alert alert-danger">
+    Password should be same
+  </div> -->
+  <button class="btn btn-primary mr-4 mt-4" (click)="login()">Login</button>
+</div>
+
+<div>
+  <p class="lead text-success" *ngIf = "service.loginId == 1">
+    Login Status: Success
+  </p>
+  <p class="lead text-danger" *ngIf = "service.loginId == 0">
+    Login Status: Failed
+  </p>
+</div>
